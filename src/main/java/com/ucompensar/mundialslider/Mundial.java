@@ -72,9 +72,12 @@ public class Mundial extends javax.swing.JFrame {
         jSliderAnio.setMinimum(1950);
         jSliderAnio.setPaintLabels(true);
         jSliderAnio.setPaintTicks(true);
+        jSliderAnio.setSnapToTicks(true);
         jSliderAnio.setValue(1986);
 
         jTextAnio.setEditable(false);
+        jTextAnio.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jTextAnio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextAnio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextAnioActionPerformed(evt);
@@ -130,8 +133,8 @@ public class Mundial extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
-                    .addComponent(jTextAnio))
+                    .addComponent(jButtonConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextAnio, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
         );
 
@@ -144,6 +147,8 @@ public class Mundial extends javax.swing.JFrame {
         jLabel4.setText("Pais Campeón");
 
         jTextCampeon.setEditable(false);
+        jTextCampeon.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jTextCampeon.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -196,7 +201,46 @@ public class Mundial extends javax.swing.JFrame {
 
     private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
         // TODO add your handling code here:
+        int mundial;
+        mundial = jSliderAnio.getValue();
+        jTextAnio.setText(String.valueOf(mundial));
         
+       switch(mundial){
+           case 1950: 
+               jTextCampeon.setText(String.valueOf("Uruguay"));
+               break;
+           case 1954:
+           case 1974:
+           case 1990:
+           case 2014:
+               jTextCampeon.setText(String.valueOf("Alemania"));
+               break;
+           case 1958:
+           case 1962:
+           case 1970:
+           case 1994:
+           case 2002:
+               jTextCampeon.setText(String.valueOf("Brasil"));
+               break;
+           case 1966:
+               jTextCampeon.setText(String.valueOf("Inglaterra"));
+               break;
+           case 1978:
+           case 1986:
+               jTextCampeon.setText(String.valueOf("Argentina"));
+               break;
+           case 1982:
+           case 2006:
+               jTextCampeon.setText(String.valueOf("Italia"));
+               break;
+           case 1998:
+           case 2018:
+               jTextCampeon.setText(String.valueOf("Francia"));
+               break;
+           case 2010:
+               jTextCampeon.setText(String.valueOf("España"));
+               break;
+       }
     }//GEN-LAST:event_jButtonConsultarActionPerformed
 
     /**
